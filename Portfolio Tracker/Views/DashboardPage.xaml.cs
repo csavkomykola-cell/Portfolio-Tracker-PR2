@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,17 +12,19 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PortfolioTracker__PR2_.ViewModels;
 
-namespace Portfolio_Tracker
+namespace PortfolioTracker__PR2_.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for DashboardPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DashboardPage : Page
     {
-        public MainWindow()
+        public DashboardPage()
         {
             InitializeComponent();
+            DataContext = new DashboardViewModel();
         }
     }
 }

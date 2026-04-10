@@ -1,0 +1,58 @@
+﻿<Window
+    x:Class="PortfolioTracker__PR2_.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Portfolio Tracker"
+    Width="1000"
+    Height="600"
+    Background="#12121A"
+    WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border Grid.Column="0" Background="#1E1E2F">
+            <StackPanel Margin="10">
+
+                <TextBlock
+                    Margin="10"
+                    FontSize="20"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    Text="💲 Портфоліо" />
+
+                <Separator Margin="5" />
+
+                <Button
+                    Click="Dashboard_Click"
+                    Content="Головна"
+                    Style="{StaticResource SidebarButton}" />
+                <Button
+                    Click="Portfolio_Click"
+                    Content="Портфель"
+                    Style="{StaticResource SidebarButton}" />
+                <Button
+                    Click="Transactions_Click"
+                    Content="Транзакції"
+                    Style="{StaticResource SidebarButton}" />
+                <Button
+                    Click="Assets_Click"
+                    Content="Активи"
+                    Style="{StaticResource SidebarButton}" />
+                <Button
+                    Click="Settings_Click"
+                    Content="Налаштування"
+                    Style="{StaticResource SidebarButton}" />
+
+            </StackPanel>
+        </Border>
+
+        <Grid Grid.Column="1">
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" />
+        </Grid>
+    </Grid>
+
+</Window>
