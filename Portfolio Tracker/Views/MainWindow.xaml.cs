@@ -22,6 +22,7 @@ namespace Portfolio_Tracker.Views
             InitializeComponent();
             MainFrame.Navigate(new DashboardPage());
         }
+
         private void Dashboard_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new DashboardPage());
@@ -29,7 +30,7 @@ namespace Portfolio_Tracker.Views
 
         private void Portfolio_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Портфель (в розробці)");
+            MainFrame.Navigate(new PortfolioPage());
         }
 
         private void Transactions_Click(object sender, RoutedEventArgs e)

@@ -17,14 +17,14 @@ using Portfolio_Tracker.ViewModels;
 namespace Portfolio_Tracker.Views
 {
     /// <summary>
-    /// Interaction logic for DashboardPage.xaml
+    /// Interaction logic for PortfolioPage.xaml
     /// </summary>
-    public partial class DashboardPage : Page
+    public partial class PortfolioPage : Page
     {
-        public DashboardPage()
+        public PortfolioPage()
         {
             InitializeComponent();
-            DataContext = new DashboardViewModel();
+            DataContext = new PortfolioViewModel();
         }
     }
 }
