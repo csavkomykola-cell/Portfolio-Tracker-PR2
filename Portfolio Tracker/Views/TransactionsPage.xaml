@@ -1,0 +1,90 @@
+﻿<Page
+    x:Class="Portfolio_Tracker.Views.TransactionsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="#12121A">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            Margin="0,0,0,20"
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="White"
+            Text="Транзакції" />
+
+        <Button
+            Grid.Row="1"
+            Margin="0,0,0,15"
+            Padding="10"
+            Background="White"
+            BorderBrush="Transparent"
+            Click="AddTransaction_Click"
+            Content="Додати транзакцію"
+            Foreground="#1E1E2F" />
+
+
+        <Border
+            Grid.Row="2"
+            Padding="12"
+            Background="#1E1E2F"
+            BorderBrush="#2E2E4F"
+            BorderThickness="1"
+            CornerRadius="8">
+
+            <DataGrid
+                AutoGenerateColumns="False"
+                Background="Transparent"
+                BorderThickness="0"
+                CanUserSortColumns="False"
+                Foreground="#1E1E2F"
+                IsReadOnly="True"
+                ItemsSource="{Binding Transactions}">
+                <DataGrid.RowStyle>
+                    <Style TargetType="DataGridRow">
+                        <Setter Property="Foreground" Value="#1E1E2F" />
+                    </Style>
+                </DataGrid.RowStyle>
+
+                <DataGrid.CellStyle>
+                    <Style TargetType="DataGridCell">
+                        <Setter Property="Foreground" Value="#1E1E2F" />
+                        <Setter Property="BorderThickness" Value="0" />
+                    </Style>
+                </DataGrid.CellStyle>
+
+                <DataGrid.Columns>
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Type}"
+                        Header="Тип" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Asset}"
+                        Header="Актив" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Quantity}"
+                        Header="Кількість" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Price}"
+                        Header="Ціна" />
+                    <DataGridTextColumn
+                        Width="*"
+                        Binding="{Binding Date}"
+                        Header="Дата" />
+                </DataGrid.Columns>
+
+            </DataGrid>
+
+        </Border>
+
+    </Grid>
+</Page>

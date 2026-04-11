@@ -35,7 +35,7 @@ namespace Portfolio_Tracker.Views
 
         private void Transactions_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Транзакції (в розробці)");
+            MainFrame.Navigate(new TransactionsPage());
         }
 
         private void Assets_Click(object sender, RoutedEventArgs e)
