@@ -20,25 +20,25 @@ namespace Portfolio_Tracker.ViewModels
                 {
                     Symbol="AAPL",
                     Name="Apple",
-                    Quantity=10,
-                    AvgPrice=150,
-                    CurrentPrice=180
+                    Quantity=40,
+                    AvgPrice=450,
+                    CurrentPrice=480
                 },
                 new PortfolioItem
                 {
                     Symbol="BTC",
                     Name="Bitcoin",
-                    Quantity=0.5,
-                    AvgPrice=50000,
-                    CurrentPrice=60000
+                    Quantity=0.4,
+                    AvgPrice=40000,
+                    CurrentPrice=44000
                 },
                 new PortfolioItem
                 {
                     Symbol="TSLA",
                     Name="Tesla",
-                    Quantity=5,
-                    AvgPrice=220,
-                    CurrentPrice=250
+                    Quantity=4,
+                    AvgPrice=440,
+                    CurrentPrice=4400
                 }
             };
         }

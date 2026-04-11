@@ -43,7 +43,8 @@
                     GridLinesVisibility="All"
                     IsReadOnly="True"
                     ItemsSource="{Binding PortfolioItems}"
-                    RowHeaderWidth="0">
+                    RowHeaderWidth="0"
+                    SelectionChanged="DataGrid_SelectionChanged">
 
                     <DataGrid.Columns>
                         <DataGridTextColumn

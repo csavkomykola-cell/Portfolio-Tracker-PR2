@@ -66,27 +66,53 @@
 
             </WrapPanel>
 
-            <TextBlock
+            <Border
+                Grid.Row="2"
                 Margin="10"
-                FontSize="20"
-                Foreground="White"
-                Text="Останні активи" />
-
-            <DataGrid
-                Margin="10"
-                AutoGenerateColumns="False"
+                Padding="12"
                 Background="#1E1E2F"
-                CanUserSortColumns="False"
-                Foreground="#1E1E2F"
-                ItemsSource="{Binding Assets}">
+                BorderBrush="#2E2E4F"
+                BorderThickness="1"
+                CornerRadius="8"
+                SnapsToDevicePixels="True">
 
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Symbol}" Header="Символ" />
-                    <DataGridTextColumn Binding="{Binding Name}" Header="Назва" />
-                    <DataGridTextColumn Binding="{Binding CurrentPrice}" Header="Ціна" />
-                </DataGrid.Columns>
+                <StackPanel>
 
-            </DataGrid>
+                    <TextBlock
+                        Margin="0,0,0,10"
+                        FontSize="20"
+                        Foreground="White"
+                        Text="Останні активи" />
+
+                    <DataGrid
+                        AutoGenerateColumns="False"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        CanUserSortColumns="False"
+                        Foreground="#1E1E2F"
+                        IsReadOnly="True"
+                        ItemsSource="{Binding Assets}">
+
+                        <DataGrid.Columns>
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding Symbol}"
+                                Header="Символ" />
+                            <DataGridTextColumn
+                                Width="2*"
+                                Binding="{Binding Name}"
+                                Header="Назва" />
+                            <DataGridTextColumn
+                                Width="*"
+                                Binding="{Binding CurrentPrice}"
+                                Header="Ціна" />
+                        </DataGrid.Columns>
+
+                    </DataGrid>
+
+                </StackPanel>
+
+            </Border>
 
         </StackPanel>
     </ScrollViewer>

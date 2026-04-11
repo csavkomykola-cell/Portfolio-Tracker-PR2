@@ -26,5 +26,10 @@ namespace Portfolio_Tracker.Views
             InitializeComponent();
             DataContext = new PortfolioViewModel();
         }
+
+        private void DataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
