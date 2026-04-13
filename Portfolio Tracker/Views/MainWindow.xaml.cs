@@ -40,7 +40,7 @@ namespace Portfolio_Tracker.Views
 
         private void Assets_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Активи (в розробці)");
+            MainFrame.Navigate(new AssetsPage());
         }
 
         private void Settings_Click(object sender, RoutedEventArgs e)

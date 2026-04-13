@@ -24,6 +24,7 @@
             Background="#1E1E2F"
             BorderBrush="#2E2E4F"
             BorderThickness="1"
+            CornerRadius="8"
             SnapsToDevicePixels="True">
             <StackPanel>
 
