@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Portfolio_Tracker.Views.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Background="{StaticResource MainBackground}">
+
+    <StackPanel Margin="20">
+
+        <TextBlock
+            Margin="0,0,0,20"
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="{DynamicResource TextColor}"
+            Text="Налаштування" />
+
+        <Border
+            Margin="0,0,0,15"
+            Padding="15"
+            Background="{StaticResource CardBackground}"
+            CornerRadius="8">
+
+            <StackPanel>
+                <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="16"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="Тема" />
+
+                <ComboBox x:Name="ThemeBox">
+                    <ComboBoxItem Content="Темна" />
+                    <ComboBoxItem Content="Світла" />
+                </ComboBox>
+            </StackPanel>
+        </Border>
+
+        <Border
+            Margin="0,0,0,15"
+            Padding="15"
+            Background="{StaticResource CardBackground}"
+            CornerRadius="8">
+
+            <StackPanel>
+                <TextBlock
+                    Margin="0,0,0,10"
+                    FontSize="16"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="Мова" />
+
+                <ComboBox x:Name="LanguageBox">
+                    <ComboBoxItem Content="Українська" />
+                    <ComboBoxItem Content="English" />
+                </ComboBox>
+            </StackPanel>
+        </Border>
+
+        <Button
+            Width="150"
+            Padding="10"
+            Background="{StaticResource CardBackground}"
+            Click="Save_Click"
+            Content="Зберегти"
+            Foreground="{DynamicResource TextColor}" />
+
+    </StackPanel>
+
+</Page>

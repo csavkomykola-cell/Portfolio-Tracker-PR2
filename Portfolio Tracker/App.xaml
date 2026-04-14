@@ -6,9 +6,18 @@
     StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
 
+        <SolidColorBrush x:Key="MainBackground" Color="#12121A" />
+        <SolidColorBrush x:Key="CardBackground" Color="#1E1E2F" />
+        <SolidColorBrush x:Key="TextColor" Color="White" />
+        <SolidColorBrush x:Key="TableTextColor" Color="Black" />
+        <SolidColorBrush x:Key="BlackColor" Color="Black" />
+        <SolidColorBrush x:Key="SidebarHoverBackground" Color="#2E2E4F" />
+        <SolidColorBrush x:Key="ButtonPrimaryBackground" Color="White" />
+        <SolidColorBrush x:Key="ButtonDangerBackground" Color="#FF4C4C" />
+
         <Style x:Key="SidebarButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="White" />
+            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
             <Setter Property="Margin" Value="5" />
             <Setter Property="Padding" Value="10" />
             <Setter Property="HorizontalContentAlignment" Value="Left" />

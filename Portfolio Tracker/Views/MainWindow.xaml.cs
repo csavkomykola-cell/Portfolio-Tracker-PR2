@@ -45,7 +45,7 @@ namespace Portfolio_Tracker.Views
 
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Налаштування (в розробці)");
+            MainFrame.Navigate(new SettingsPage());
         }
     }
 }

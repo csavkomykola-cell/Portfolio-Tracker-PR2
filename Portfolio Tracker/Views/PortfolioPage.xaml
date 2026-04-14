@@ -2,7 +2,7 @@
     x:Class="Portfolio_Tracker.Views.PortfolioPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Background="#12121A">
+    Background="{StaticResource MainBackground}">
 
     <Grid Margin="20">
 
@@ -15,13 +15,13 @@
             Margin="0,0,0,12"
             FontSize="28"
             FontWeight="Bold"
-            Foreground="White"
+            Foreground="{DynamicResource TextColor}"
             Text="Портфель" />
 
         <Border
             Grid.Row="1"
             Padding="12"
-            Background="#1E1E2F"
+            Background="{StaticResource CardBackground}"
             BorderBrush="#2E2E4F"
             BorderThickness="1"
             CornerRadius="8"
@@ -31,16 +31,16 @@
                 <TextBlock
                     Margin="0,0,0,8"
                     FontSize="14"
-                    Foreground="White"
+                    Foreground="{DynamicResource TextColor}"
                     Text="Мій портфель" />
 
                 <DataGrid
                     Margin="10"
                     AutoGenerateColumns="False"
-                    Background="#1E1E2F"
+                    Background="{StaticResource CardBackground}"
                     BorderThickness="0"
                     CanUserSortColumns="False"
-                    Foreground="#1E1E2F"
+                    Foreground="{DynamicResource TableTextColor}"
                     GridLinesVisibility="All"
                     IsReadOnly="True"
                     ItemsSource="{Binding PortfolioItems}"
@@ -49,13 +49,13 @@
 
                     <DataGrid.RowStyle>
                         <Style TargetType="DataGridRow">
-                            <Setter Property="Foreground" Value="#1E1E2F" />
+                            <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
                         </Style>
                     </DataGrid.RowStyle>
 
                     <DataGrid.CellStyle>
                         <Style TargetType="DataGridCell">
-                            <Setter Property="Foreground" Value="#1E1E2F" />
+                            <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
                             <Setter Property="BorderThickness" Value="0" />
                         </Style>
                     </DataGrid.CellStyle>

@@ -36,7 +36,7 @@ namespace Portfolio_Tracker.Views
             {
                 Symbol = "NEW",
                 Name = "Новий актив",
-                AssetType = "Акція",
+                AssetType = "—",
                 Currency = "USD"
             });
         }
