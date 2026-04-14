@@ -40,6 +40,12 @@ namespace Portfolio_Tracker.Views
             Dispatcher.Invoke(() => { }, DispatcherPriority.Render);
 
             MessageBox.Show("Налаштування збережено");
+
+            var mw = Application.Current.MainWindow as MainWindow;
+            if (mw != null)
+            {
+                mw.MainFrame.Navigate(Activator.CreateInstance(this.GetType()));
+            }
         }
 
         private void LoadSettings()
@@ -71,20 +77,13 @@ namespace Portfolio_Tracker.Views
 
         private void ApplyTheme(string theme)
         {
-            if (theme == "Світла")
-            {
-                Application.Current.Resources["MainBackground"] = new SolidColorBrush(Colors.White);
-                Application.Current.Resources["CardBackground"] = new SolidColorBrush(Color.FromRgb(240, 240, 240));
-                Application.Current.Resources["TextColor"] = new SolidColorBrush(Colors.Black);
-            }
-            else
-            {
-                Application.Current.Resources["MainBackground"] = new SolidColorBrush(Color.FromRgb(18, 18, 26));
-                Application.Current.Resources["CardBackground"] = new SolidColorBrush(Color.FromRgb(30, 30, 47));
-                Application.Current.Resources["TextColor"] = new SolidColorBrush(Colors.White);
-            }
+            var app = (App)Application.Current;
+            if (app == null) return;
 
-            ((App)Application.Current).UpdateTableTextColorToOpposite();
+            bool isLight = string.Equals(theme, "Світла", StringComparison.OrdinalIgnoreCase)
+                           || string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase);
+
+            app.ApplyTheme(!isLight);
         }
     }
 }

@@ -2,7 +2,7 @@
     x:Class="Portfolio_Tracker.Views.PortfolioPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Background="{StaticResource MainBackground}">
+    Background="{DynamicResource MainBackground}">
 
     <Grid Margin="20">
 
@@ -21,7 +21,7 @@
         <Border
             Grid.Row="1"
             Padding="12"
-            Background="{StaticResource CardBackground}"
+            Background="{DynamicResource CardBackground}"
             BorderBrush="#2E2E4F"
             BorderThickness="1"
             CornerRadius="8"
@@ -37,7 +37,7 @@
                 <DataGrid
                     Margin="10"
                     AutoGenerateColumns="False"
-                    Background="{StaticResource CardBackground}"
+                    Background="Transparent"
                     BorderThickness="0"
                     CanUserSortColumns="False"
                     Foreground="{DynamicResource TableTextColor}"

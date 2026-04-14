@@ -27,24 +27,26 @@
             <Button
                 Margin="5"
                 Padding="8"
-                Background="White"
+                Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Add_Click"
                 Content="Додати"
-                Foreground="{DynamicResource BlackColor}" />
+                Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
                 Margin="5"
                 Padding="8"
+                Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Edit_Click"
-                Content="Редагувати" />
+                Content="Редагувати"
+                Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
                 Margin="5"
                 Padding="8"
-                Background="#FF4C4C"
+                Background="{DynamicResource ButtonDangerBackground}"
                 Click="Delete_Click"
                 Content="Видалити"
-                Foreground="{DynamicResource TextColor}" />
+                Foreground="{DynamicResource ButtonDangerForeground}" />
 
         </StackPanel>
 

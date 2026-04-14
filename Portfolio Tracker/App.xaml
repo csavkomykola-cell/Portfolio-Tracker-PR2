@@ -13,7 +13,9 @@
         <SolidColorBrush x:Key="BlackColor" Color="Black" />
         <SolidColorBrush x:Key="SidebarHoverBackground" Color="#2E2E4F" />
         <SolidColorBrush x:Key="ButtonPrimaryBackground" Color="White" />
+        <SolidColorBrush x:Key="ButtonPrimaryForeground" Color="Black" />
         <SolidColorBrush x:Key="ButtonDangerBackground" Color="#FF4C4C" />
+        <SolidColorBrush x:Key="ButtonDangerForeground" Color="White" />
 
         <Style x:Key="SidebarButton" TargetType="Button">
             <Setter Property="Background" Value="Transparent" />
@@ -30,7 +32,7 @@
                         </Border>
                         <ControlTemplate.Triggers>
                             <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="#2E2E4F" />
+                                <Setter Property="Background" Value="{DynamicResource SidebarHoverBackground}" />
                             </Trigger>
                         </ControlTemplate.Triggers>
                     </ControlTemplate>

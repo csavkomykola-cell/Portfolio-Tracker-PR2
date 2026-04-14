@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.IO;
+using System.Windows;
 using System.Windows.Media;
 
 namespace Portfolio_Tracker
@@ -8,10 +9,7 @@ namespace Portfolio_Tracker
         public void UpdateTableTextColorToOpposite()
         {
             if (Current?.Resources == null) return;
-
-            var res = Current.Resources;
-            if (!(res["TextColor"] is SolidColorBrush textBrush)) return;
-            res["TableTextColor"] = new SolidColorBrush(textBrush.Color);
+            Current.Resources["TableTextColor"] = new SolidColorBrush(Colors.Black);
         }
 
         public void ApplyTheme(bool dark)
@@ -26,7 +24,9 @@ namespace Portfolio_Tracker
                 res["TextColor"] = new SolidColorBrush(Colors.White);
                 res["SidebarHoverBackground"] = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#2E2E4F"));
                 res["ButtonPrimaryBackground"] = new SolidColorBrush(Colors.White);
+                res["ButtonPrimaryForeground"] = new SolidColorBrush(Colors.Black);
                 res["ButtonDangerBackground"] = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4C4C"));
+                res["ButtonDangerForeground"] = new SolidColorBrush(Colors.White);
             }
             else
             {
@@ -35,10 +35,36 @@ namespace Portfolio_Tracker
                 res["TextColor"] = new SolidColorBrush(Colors.Black);
                 res["SidebarHoverBackground"] = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#E0E0F0"));
                 res["ButtonPrimaryBackground"] = new SolidColorBrush(Colors.Black);
+                res["ButtonPrimaryForeground"] = new SolidColorBrush(Colors.White);
                 res["ButtonDangerBackground"] = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#FF4C4C"));
+                res["ButtonDangerForeground"] = new SolidColorBrush(Colors.White);
             }
 
-            UpdateTableTextColorToOpposite();
+            res["TableTextColor"] = new SolidColorBrush(Colors.Black);
+        }
+
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            try
+            {
+                var filePath = "Data/settings.txt";
+                if (File.Exists(filePath))
+                {
+                    var data = File.ReadAllText(filePath).Split('/');
+                    if (data.Length >= 1)
+                    {
+                        var theme = data[0]?.Trim();
+                        bool isLight = string.Equals(theme, "Світла", System.StringComparison.OrdinalIgnoreCase)
+                                       || string.Equals(theme, "Light", System.StringComparison.OrdinalIgnoreCase);
+                        ApplyTheme(!isLight);
+                    }
+                }
+            }
+            catch
+            {
+            }
+
+            base.OnStartup(e);
         }
     }
 }
