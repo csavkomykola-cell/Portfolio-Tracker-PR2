@@ -31,16 +31,12 @@ namespace Portfolio_Tracker.Views
         {
             string theme = (ThemeBox.SelectedItem as ComboBoxItem)?.Content.ToString();
             string lang = (LanguageBox.SelectedItem as ComboBoxItem)?.Content.ToString();
-
             Directory.CreateDirectory("Data");
             File.WriteAllText(filePath, theme + "/" + lang);
-
             ApplyTheme(theme);
-
+            ApplyLanguage(lang);
             Dispatcher.Invoke(() => { }, DispatcherPriority.Render);
-
             MessageBox.Show("Налаштування збережено");
-
             var mw = Application.Current.MainWindow as MainWindow;
             if (mw != null)
             {
@@ -51,15 +47,14 @@ namespace Portfolio_Tracker.Views
         private void LoadSettings()
         {
             if (!File.Exists(filePath)) return;
-
             var data = File.ReadAllText(filePath).Split('/');
-
             if (data.Length == 2)
             {
                 SetComboBox(ThemeBox, data[0]);
                 SetComboBox(LanguageBox, data[1]);
 
                 ApplyTheme(data[0]);
+                ApplyLanguage(data[1]);
             }
         }
 
@@ -79,11 +74,34 @@ namespace Portfolio_Tracker.Views
         {
             var app = (App)Application.Current;
             if (app == null) return;
-
-            bool isLight = string.Equals(theme, "Світла", StringComparison.OrdinalIgnoreCase)
-                           || string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase);
-
+            bool isLight = string.Equals(theme, "Світла", StringComparison.OrdinalIgnoreCase) || string.Equals(theme, "Light", StringComparison.OrdinalIgnoreCase);
             app.ApplyTheme(!isLight);
+        }
+
+        private void ApplyLanguage(string lang)
+        {
+            var merged = Application.Current.Resources.MergedDictionaries;
+
+            for (int i = merged.Count - 1; i >= 0; i--)
+            {
+                var md = merged[i];
+                if (md.Source != null && md.Source.OriginalString.Contains("Strings."))
+                {
+                    merged.RemoveAt(i);
+                }
+            }
+
+            var dict = new ResourceDictionary();
+            if (lang == "English")
+            {
+                dict.Source = new Uri("Resources/Strings.en.xaml", UriKind.Relative);
+            }
+            else 
+            {
+                dict.Source = new Uri("Resources/Strings.uk.xaml", UriKind.Relative);
+            }
+
+            merged.Add(dict);
         }
     }
 }

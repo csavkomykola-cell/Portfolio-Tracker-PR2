@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Dashboard">Головна</sys:String>
+    <sys:String x:Key="Portfolio">Портфель</sys:String>
+    <sys:String x:Key="Transactions">Транзакції</sys:String>
+    <sys:String x:Key="Assets">Активи</sys:String>
+    <sys:String x:Key="Settings">Налаштування</sys:String>
+    <sys:String x:Key="AddTransaction">Додати транзакцію</sys:String>
+    <sys:String x:Key="Save">Зберегти</sys:String>
+    <sys:String x:Key="Theme">Тема</sys:String>
+    <sys:String x:Key="Language">Мова</sys:String>
+    <sys:String x:Key="Title">💲Портфоліо</sys:String>
+    <sys:String x:Key="Edit">Редагувати</sys:String>
+    <sys:String x:Key="Delete">Видалити</sys:String>
+    <sys:String x:Key="MyPortfolio">Мій портфель</sys:String>
+    <sys:String x:Key="Profit">Прибуток</sys:String>
+    <sys:String x:Key="TotalCost">Загальна вартість</sys:String>
+    <sys:String x:Key="LatestAssets">Останні активи</sys:String>
+    <sys:String x:Key="Symbol">Символ</sys:String>
+    <sys:String x:Key="Name">Назва</sys:String>
+    <sys:String x:Key="Price">Ціна</sys:String>
+    <sys:String x:Key="Quantity">Кількість</sys:String>
+    <sys:String x:Key="AvgPrice">Середня ціна</sys:String>
+    <sys:String x:Key="CurrentPrice">Поточна ціна</sys:String>
+    <sys:String x:Key="TotalValue">Взагалом</sys:String>
+    <sys:String x:Key="Type">Тип</sys:String>
+    <sys:String x:Key="Asset">Назва активу</sys:String>
+    <sys:String x:Key="Date">Дата</sys:String>
+    <sys:String x:Key="AssetType">Тип Активу</sys:String>
+    <sys:String x:Key="Currency">Валюта</sys:String>
+
+</ResourceDictionary>

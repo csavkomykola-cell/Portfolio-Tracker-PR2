@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Windows;
 using System.Windows.Media;
 
@@ -43,6 +44,34 @@ namespace Portfolio_Tracker
             res["TableTextColor"] = new SolidColorBrush(Colors.Black);
         }
 
+        public void ApplyLanguage(string lang)
+        {
+            if (Current?.Resources == null) return;
+
+            var merged = Current.Resources.MergedDictionaries;
+
+            for (int i = merged.Count - 1; i >= 0; i--)
+            {
+                var md = merged[i];
+                if (md.Source != null && md.Source.OriginalString.Contains("Strings."))
+                {
+                    merged.RemoveAt(i);
+                }
+            }
+
+            var dict = new ResourceDictionary();
+            if (string.Equals(lang, "English", StringComparison.OrdinalIgnoreCase))
+            {
+                dict.Source = new Uri("Resources/Strings.en.xaml", UriKind.Relative);
+            }
+            else
+            {
+                dict.Source = new Uri("Resources/Strings.uk.xaml", UriKind.Relative);
+            }
+
+            merged.Add(dict);
+        }
+
         protected override void OnStartup(StartupEventArgs e)
         {
             try
@@ -57,6 +86,12 @@ namespace Portfolio_Tracker
                         bool isLight = string.Equals(theme, "Світла", System.StringComparison.OrdinalIgnoreCase)
                                        || string.Equals(theme, "Light", System.StringComparison.OrdinalIgnoreCase);
                         ApplyTheme(!isLight);
+                    }
+
+                    if (data.Length >= 2)
+                    {
+                        var lang = data[1]?.Trim();
+                        ApplyLanguage(lang);
                     }
                 }
             }

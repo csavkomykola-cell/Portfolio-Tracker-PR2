@@ -58,6 +58,12 @@
     <Compile Include="Models\Asset.cs" />
     <Compile Include="Models\PortfolioItem.cs" />
     <Compile Include="Models\Transaction.cs" />
+    <None Include="Resources\Strings.en.xaml.cs">
+      <DependentUpon>Strings.en.xaml</DependentUpon>
+    </None>
+    <None Include="Resources\Strings.uk.xaml.cs">
+      <DependentUpon>Strings.uk.xaml</DependentUpon>
+    </None>
     <Compile Include="ViewModels\AssetsViewModel.cs" />
     <Compile Include="ViewModels\PortfolioViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />
@@ -74,6 +80,14 @@
     <Compile Include="Views\TransactionsPage.xaml.cs">
       <DependentUpon>TransactionsPage.xaml</DependentUpon>
     </Compile>
+    <Page Include="Resources\Strings.en.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Resources\Strings.uk.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\AssetsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +141,8 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.en.resx" />
+    <EmbeddedResource Include="Resources\Strings.uk.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -137,7 +153,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
-    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

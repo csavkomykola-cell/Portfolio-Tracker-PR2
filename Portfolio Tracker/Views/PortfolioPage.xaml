@@ -16,7 +16,7 @@
             FontSize="28"
             FontWeight="Bold"
             Foreground="{DynamicResource TextColor}"
-            Text="Портфель" />
+            Text="{DynamicResource Portfolio}" />
 
         <Border
             Grid.Row="1"
@@ -32,8 +32,7 @@
                     Margin="0,0,0,8"
                     FontSize="14"
                     Foreground="{DynamicResource TextColor}"
-                    Text="Мій портфель" />
-
+                    Text="{DynamicResource MyPortfolio}" />
                 <DataGrid
                     Margin="10"
                     AutoGenerateColumns="False"
@@ -64,31 +63,31 @@
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding Symbol}"
-                            Header="Символ" />
+                            Header="{DynamicResource Symbol}" />
                         <DataGridTextColumn
                             Width="2*"
                             Binding="{Binding Name}"
-                            Header="Назва" />
+                            Header="{DynamicResource Name}" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding Quantity}"
-                            Header="Кількість" />
+                            Header="{DynamicResource Quantity}" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding AvgPrice}"
-                            Header="Сер. ціна" />
+                            Header="{DynamicResource AvgPrice}" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding CurrentPrice}"
-                            Header="Поточна ціна" />
+                            Header="{DynamicResource CurrentPrice}" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding TotalValue}"
-                            Header="Вартість" />
+                            Header="{DynamicResource TotalValue}" />
                         <DataGridTextColumn
                             Width="*"
                             Binding="{Binding Profit}"
-                            Header="П/З" />
+                            Header="{DynamicResource Profit}" />
                     </DataGrid.Columns>
 
                 </DataGrid>

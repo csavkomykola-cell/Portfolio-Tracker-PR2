@@ -22,29 +22,29 @@
                     FontSize="20"
                     FontWeight="Bold"
                     Foreground="{DynamicResource TextColor}"
-                    Text="💲 Портфоліо" />
+                    Text="{DynamicResource Title}" />
 
                 <Separator Margin="5" />
 
                 <Button
                     Click="Dashboard_Click"
-                    Content="Головна"
+                    Content="{DynamicResource Dashboard}"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Portfolio_Click"
-                    Content="Портфель"
+                    Content="{DynamicResource Portfolio}"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Transactions_Click"
-                    Content="Транзакції"
+                    Content="{DynamicResource Transactions}"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Assets_Click"
-                    Content="Активи"
+                    Content="{DynamicResource Assets}"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Settings_Click"
-                    Content="Налаштування"
+                    Content="{DynamicResource Settings}"
                     Style="{StaticResource SidebarButton}" />
 
             </StackPanel>

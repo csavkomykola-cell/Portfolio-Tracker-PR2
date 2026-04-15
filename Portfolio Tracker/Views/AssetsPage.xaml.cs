@@ -34,10 +34,10 @@ namespace Portfolio_Tracker.Views
         {
             vm.Assets.Add(new Asset
             {
-                Symbol = "NEW",
-                Name = "Новий актив",
+                Symbol = "—",
+                Name = "—",
                 AssetType = "—",
-                Currency = "USD"
+                Currency = "—"
             });
         }
 

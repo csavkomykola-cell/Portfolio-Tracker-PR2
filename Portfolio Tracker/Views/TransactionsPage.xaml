@@ -17,16 +17,15 @@
             FontSize="28"
             FontWeight="Bold"
             Foreground="{DynamicResource TextColor}"
-            Text="Транзакції" />
+            Text="{DynamicResource Transactions}" />
 
         <Button
             Grid.Row="1"
             Margin="0,0,0,15"
             Padding="10"
             Background="{DynamicResource CardBackground}"
-            BorderBrush="Transparent"
             Click="AddTransaction_Click"
-            Content="Додати транзакцію"
+            Content="{DynamicResource AddTransaction}"
             Foreground="{DynamicResource TextColor}" />
 
         <Border
@@ -62,23 +61,23 @@
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Type}"
-                        Header="Тип" />
+                        Header="{DynamicResource Type}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Asset}"
-                        Header="Актив" />
+                        Header="{DynamicResource Asset}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Quantity}"
-                        Header="Кількість" />
+                        Header="{DynamicResource Quantity}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Price}"
-                        Header="Ціна" />
+                        Header="{DynamicResource Price}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Date}"
-                        Header="Дата" />
+                        Header="{DynamicResource Date}" />
                 </DataGrid.Columns>
 
             </DataGrid>

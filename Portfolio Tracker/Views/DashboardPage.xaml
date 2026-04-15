@@ -12,7 +12,7 @@
                 FontSize="28"
                 FontWeight="Bold"
                 Foreground="{DynamicResource TextColor}"
-                Text="Головна" />
+                Text="{DynamicResource Dashboard}" />
 
             <WrapPanel>
 
@@ -21,9 +21,12 @@
                     Margin="10"
                     Padding="20"
                     Background="{DynamicResource CardBackground}"
+                    BorderBrush="#2E2E4F"
+                    BorderThickness="1"
                     CornerRadius="10">
+
                     <StackPanel>
-                        <TextBlock Foreground="Gray" Text="Загальна вартість" />
+                        <TextBlock Foreground="Gray" Text="{DynamicResource TotalCost}" />
                         <TextBlock
                             FontSize="20"
                             FontWeight="Bold"
@@ -37,9 +40,11 @@
                     Margin="10"
                     Padding="20"
                     Background="{DynamicResource CardBackground}"
+                    BorderBrush="#2E2E4F"
+                    BorderThickness="1"
                     CornerRadius="10">
                     <StackPanel>
-                        <TextBlock Foreground="Gray" Text="Прибуток" />
+                        <TextBlock Foreground="Gray" Text="{DynamicResource Profit}" />
                         <TextBlock
                             FontSize="20"
                             FontWeight="Bold"
@@ -53,9 +58,11 @@
                     Margin="10"
                     Padding="20"
                     Background="{DynamicResource CardBackground}"
+                    BorderBrush="#2E2E4F"
+                    BorderThickness="1"
                     CornerRadius="10">
                     <StackPanel>
-                        <TextBlock Foreground="Gray" Text="Активи" />
+                        <TextBlock Foreground="Gray" Text="{DynamicResource Assets}" />
                         <TextBlock
                             FontSize="20"
                             FontWeight="Bold"
@@ -81,13 +88,13 @@
                         Margin="10"
                         FontSize="20"
                         Foreground="{DynamicResource TextColor}"
-                        Text="Останні активи" />
-
+                        Text="{DynamicResource LatestAssets}" />
                     <DataGrid
                         Margin="10"
                         AutoGenerateColumns="False"
                         Background="Transparent"
                         CanUserSortColumns="False"
+                        ColumnWidth="*"
                         Foreground="{DynamicResource TableTextColor}"
                         ItemsSource="{Binding Assets}">
 
@@ -105,9 +112,9 @@
                         </DataGrid.CellStyle>
 
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Symbol}" Header="Символ" />
-                            <DataGridTextColumn Binding="{Binding Name}" Header="Назва" />
-                            <DataGridTextColumn Binding="{Binding CurrentPrice}" Header="Ціна" />
+                            <DataGridTextColumn Binding="{Binding Symbol}" Header="{DynamicResource Symbol}" />
+                            <DataGridTextColumn Binding="{Binding Name}" Header="{DynamicResource Name}" />
+                            <DataGridTextColumn Binding="{Binding CurrentPrice}" Header="{DynamicResource Price}" />
                         </DataGrid.Columns>
 
                     </DataGrid>

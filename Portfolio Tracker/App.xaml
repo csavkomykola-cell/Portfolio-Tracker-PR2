@@ -5,40 +5,63 @@
     xmlns:local="clr-namespace:Portfolio_Tracker"
     StartupUri="Views/MainWindow.xaml">
     <Application.Resources>
+        <ResourceDictionary>
 
-        <SolidColorBrush x:Key="MainBackground" Color="#12121A" />
-        <SolidColorBrush x:Key="CardBackground" Color="#1E1E2F" />
-        <SolidColorBrush x:Key="TextColor" Color="White" />
-        <SolidColorBrush x:Key="TableTextColor" Color="Black" />
-        <SolidColorBrush x:Key="BlackColor" Color="Black" />
-        <SolidColorBrush x:Key="SidebarHoverBackground" Color="#2E2E4F" />
-        <SolidColorBrush x:Key="ButtonPrimaryBackground" Color="White" />
-        <SolidColorBrush x:Key="ButtonPrimaryForeground" Color="Black" />
-        <SolidColorBrush x:Key="ButtonDangerBackground" Color="#FF4C4C" />
-        <SolidColorBrush x:Key="ButtonDangerForeground" Color="White" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/Portfolio Tracker;component/Resources/Strings.uk.xaml" />
+            </ResourceDictionary.MergedDictionaries>
 
-        <Style x:Key="SidebarButton" TargetType="Button">
-            <Setter Property="Background" Value="Transparent" />
-            <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
-            <Setter Property="Margin" Value="5" />
-            <Setter Property="Padding" Value="10" />
-            <Setter Property="HorizontalContentAlignment" Value="Left" />
-            <Setter Property="BorderBrush" Value="Transparent" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="Button">
-                        <Border Background="{TemplateBinding Background}" CornerRadius="5">
-                            <ContentPresenter Margin="5" />
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="Background" Value="{DynamicResource SidebarHoverBackground}" />
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
+            <SolidColorBrush x:Key="MainBackground" Color="#12121A" />
+            <SolidColorBrush x:Key="CardBackground" Color="#1E1E2F" />
+            <SolidColorBrush x:Key="TextColor" Color="White" />
+            <SolidColorBrush x:Key="TableTextColor" Color="Black" />
+            <SolidColorBrush x:Key="BlackColor" Color="Black" />
+            <SolidColorBrush x:Key="SidebarHoverBackground" Color="#2E2E4F" />
+            <SolidColorBrush x:Key="ButtonPrimaryBackground" Color="White" />
+            <SolidColorBrush x:Key="ButtonPrimaryForeground" Color="Black" />
+            <SolidColorBrush x:Key="ButtonDangerBackground" Color="#FF4C4C" />
+            <SolidColorBrush x:Key="ButtonDangerForeground" Color="White" />
 
+            <Style x:Key="SidebarButton" TargetType="Button">
+                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
+                <Setter Property="Margin" Value="5" />
+                <Setter Property="Padding" Value="10" />
+                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                <Setter Property="BorderBrush" Value="Transparent" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                <ContentPresenter Margin="5" />
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="{DynamicResource SidebarHoverBackground}" />
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style TargetType="DataGrid">
+                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+            </Style>
+
+            <Style TargetType="DataGridRow">
+                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+            </Style>
+
+            <Style TargetType="DataGridCell">
+                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+                <Setter Property="BorderThickness" Value="0" />
+            </Style>
+
+            <Style TargetType="DataGridColumnHeader">
+                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+            </Style>
+
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

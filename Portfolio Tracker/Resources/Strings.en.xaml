@@ -1,0 +1,35 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <sys:String x:Key="Dashboard">Dashboard</sys:String>
+    <sys:String x:Key="Portfolio">Portfolio</sys:String>
+    <sys:String x:Key="Transactions">Transactions</sys:String>
+    <sys:String x:Key="Assets">Assets</sys:String>
+    <sys:String x:Key="Settings">Settings</sys:String>
+    <sys:String x:Key="AddTransaction">Add Transaction</sys:String>
+    <sys:String x:Key="Save">Save</sys:String>
+    <sys:String x:Key="Theme">Theme</sys:String>
+    <sys:String x:Key="Language">Language</sys:String>
+    <sys:String x:Key="Title">💲Portfolio Tracker</sys:String>
+    <sys:String x:Key="Edit">Edit</sys:String>
+    <sys:String x:Key="Delete">Delete</sys:String>
+    <sys:String x:Key="MyPortfolio">My Portfolio</sys:String>
+    <sys:String x:Key="Profit">Profit</sys:String>
+    <sys:String x:Key="TotalCost">Total Cost</sys:String>
+    <sys:String x:Key="LatestAssets">Latest Assets</sys:String>
+    <sys:String x:Key="Symbol">Symbol</sys:String>
+    <sys:String x:Key="Name">Name</sys:String>
+    <sys:String x:Key="Price">Price</sys:String>
+    <sys:String x:Key="Quantity">Quantity</sys:String>
+    <sys:String x:Key="AvgPrice">Average Price</sys:String>
+    <sys:String x:Key="CurrentPrice">Current Price</sys:String>
+    <sys:String x:Key="TotalValue">Total Value</sys:String>
+    <sys:String x:Key="Type">Type</sys:String>
+    <sys:String x:Key="Asset">Asset Name</sys:String>
+    <sys:String x:Key="Date">Date</sys:String>
+    <sys:String x:Key="AssetType">Asset Type</sys:String>
+    <sys:String x:Key="Currency">Currency</sys:String>
+
+</ResourceDictionary>

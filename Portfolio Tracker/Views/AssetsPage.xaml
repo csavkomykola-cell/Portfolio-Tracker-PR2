@@ -17,7 +17,7 @@
             FontSize="28"
             FontWeight="Bold"
             Foreground="{DynamicResource TextColor}"
-            Text="Активи" />
+            Text="{DynamicResource Assets}" />
 
         <StackPanel
             Grid.Row="1"
@@ -29,7 +29,7 @@
                 Padding="8"
                 Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Add_Click"
-                Content="Додати"
+                Content="{DynamicResource AddTransaction}"
                 Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
@@ -37,7 +37,7 @@
                 Padding="8"
                 Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Edit_Click"
-                Content="Редагувати"
+                Content="{DynamicResource Edit}"
                 Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
@@ -45,7 +45,7 @@
                 Padding="8"
                 Background="{DynamicResource ButtonDangerBackground}"
                 Click="Delete_Click"
-                Content="Видалити"
+                Content="{DynamicResource Delete}"
                 Foreground="{DynamicResource ButtonDangerForeground}" />
 
         </StackPanel>
@@ -86,19 +86,19 @@
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Symbol}"
-                        Header="Символ" />
+                        Header="{DynamicResource Symbol}" />
                     <DataGridTextColumn
                         Width="2*"
                         Binding="{Binding Name}"
-                        Header="Назва" />
+                        Header="{DynamicResource Name}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding AssetType}"
-                        Header="Тип" />
+                        Header="{DynamicResource AssetType}" />
                     <DataGridTextColumn
                         Width="*"
                         Binding="{Binding Currency}"
-                        Header="Валюта" />
+                        Header="{DynamicResource Currency}" />
                 </DataGrid.Columns>
 
             </DataGrid>

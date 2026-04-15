@@ -11,12 +11,14 @@
             FontSize="28"
             FontWeight="Bold"
             Foreground="{DynamicResource TextColor}"
-            Text="Налаштування" />
+            Text="{DynamicResource Settings}" />
 
         <Border
             Margin="0,0,0,15"
             Padding="15"
             Background="{DynamicResource CardBackground}"
+            BorderBrush="#2E2E4F"
+            BorderThickness="1"
             CornerRadius="8">
 
             <StackPanel>
@@ -24,8 +26,7 @@
                     Margin="0,0,0,10"
                     FontSize="16"
                     Foreground="{DynamicResource TextColor}"
-                    Text="Тема" />
-
+                    Text="{DynamicResource Theme}" />
                 <ComboBox x:Name="ThemeBox">
                     <ComboBoxItem Content="Темна" />
                     <ComboBoxItem Content="Світла" />
@@ -37,6 +38,8 @@
             Margin="0,0,0,15"
             Padding="15"
             Background="{DynamicResource CardBackground}"
+            BorderBrush="#2E2E4F"
+            BorderThickness="1"
             CornerRadius="8">
 
             <StackPanel>
@@ -44,7 +47,7 @@
                     Margin="0,0,0,10"
                     FontSize="16"
                     Foreground="{DynamicResource TextColor}"
-                    Text="Мова" />
+                    Text="{DynamicResource Language}" />
 
                 <ComboBox x:Name="LanguageBox">
                     <ComboBoxItem Content="Українська" />
@@ -58,7 +61,7 @@
             Padding="10"
             Background="{DynamicResource CardBackground}"
             Click="Save_Click"
-            Content="Зберегти"
+            Content="{DynamicResource Save}"
             Foreground="{DynamicResource TextColor}" />
 
     </StackPanel>
