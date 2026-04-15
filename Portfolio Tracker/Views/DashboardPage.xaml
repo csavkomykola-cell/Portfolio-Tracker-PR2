@@ -4,124 +4,147 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     Background="{DynamicResource MainBackground}">
 
-    <ScrollViewer>
-        <StackPanel Margin="20">
+    <Grid Margin="20">
 
-            <TextBlock
-                Margin="0,0,0,20"
-                FontSize="28"
-                FontWeight="Bold"
-                Foreground="{DynamicResource TextColor}"
-                Text="{DynamicResource Dashboard}" />
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-            <WrapPanel>
+        <TextBlock
+            Grid.Row="0"
+            Margin="0,0,0,20"
+            FontSize="28"
+            FontWeight="Bold"
+            Foreground="{DynamicResource TextColor}"
+            Text="{DynamicResource Dashboard}" />
 
-                <Border
-                    Width="250"
-                    Margin="10"
-                    Padding="20"
-                    Background="{DynamicResource CardBackground}"
-                    BorderBrush="#2E2E4F"
-                    BorderThickness="1"
-                    CornerRadius="10">
-
-                    <StackPanel>
-                        <TextBlock Foreground="Gray" Text="{DynamicResource TotalCost}" />
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="Bold"
-                            Foreground="{DynamicResource TextColor}"
-                            Text="{Binding TotalValue}" />
-                    </StackPanel>
-                </Border>
-
-                <Border
-                    Width="250"
-                    Margin="10"
-                    Padding="20"
-                    Background="{DynamicResource CardBackground}"
-                    BorderBrush="#2E2E4F"
-                    BorderThickness="1"
-                    CornerRadius="10">
-                    <StackPanel>
-                        <TextBlock Foreground="Gray" Text="{DynamicResource Profit}" />
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="Bold"
-                            Foreground="LightGreen"
-                            Text="{Binding Profit}" />
-                    </StackPanel>
-                </Border>
-
-                <Border
-                    Width="250"
-                    Margin="10"
-                    Padding="20"
-                    Background="{DynamicResource CardBackground}"
-                    BorderBrush="#2E2E4F"
-                    BorderThickness="1"
-                    CornerRadius="10">
-                    <StackPanel>
-                        <TextBlock Foreground="Gray" Text="{DynamicResource Assets}" />
-                        <TextBlock
-                            FontSize="20"
-                            FontWeight="Bold"
-                            Foreground="{DynamicResource TextColor}"
-                            Text="{Binding AssetCount}" />
-                    </StackPanel>
-                </Border>
-
-            </WrapPanel>
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
             <Border
-                Grid.Row="2"
+                Grid.Column="0"
                 Margin="10"
-                Padding="12"
+                Padding="20"
                 Background="{DynamicResource CardBackground}"
                 BorderBrush="#2E2E4F"
                 BorderThickness="1"
-                CornerRadius="8"
-                SnapsToDevicePixels="True">
+                CornerRadius="10">
 
                 <StackPanel>
+                    <TextBlock Foreground="Gray" Text="{DynamicResource TotalCost}" />
                     <TextBlock
-                        Margin="10"
                         FontSize="20"
+                        FontWeight="Bold"
                         Foreground="{DynamicResource TextColor}"
-                        Text="{DynamicResource LatestAssets}" />
-                    <DataGrid
-                        Margin="10"
-                        AutoGenerateColumns="False"
-                        Background="Transparent"
-                        CanUserSortColumns="False"
-                        ColumnWidth="*"
-                        Foreground="{DynamicResource TableTextColor}"
-                        ItemsSource="{Binding Assets}">
-
-                        <DataGrid.RowStyle>
-                            <Style TargetType="DataGridRow">
-                                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
-                            </Style>
-                        </DataGrid.RowStyle>
-
-                        <DataGrid.CellStyle>
-                            <Style TargetType="DataGridCell">
-                                <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
-                                <Setter Property="BorderThickness" Value="0" />
-                            </Style>
-                        </DataGrid.CellStyle>
-
-                        <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Symbol}" Header="{DynamicResource Symbol}" />
-                            <DataGridTextColumn Binding="{Binding Name}" Header="{DynamicResource Name}" />
-                            <DataGridTextColumn Binding="{Binding CurrentPrice}" Header="{DynamicResource Price}" />
-                        </DataGrid.Columns>
-
-                    </DataGrid>
+                        Text="{Binding TotalValue}" />
                 </StackPanel>
             </Border>
 
-        </StackPanel>
-    </ScrollViewer>
+            <Border
+                Grid.Column="1"
+                Margin="10"
+                Padding="20"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="#2E2E4F"
+                BorderThickness="1"
+                CornerRadius="10">
 
+                <StackPanel>
+                    <TextBlock Foreground="Gray" Text="{DynamicResource Profit}" />
+                    <TextBlock
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="LightGreen"
+                        Text="{Binding Profit}" />
+                </StackPanel>
+            </Border>
+
+            <Border
+                Grid.Column="2"
+                Margin="10"
+                Padding="20"
+                Background="{DynamicResource CardBackground}"
+                BorderBrush="#2E2E4F"
+                BorderThickness="1"
+                CornerRadius="10">
+
+                <StackPanel>
+                    <TextBlock Foreground="Gray" Text="{DynamicResource Assets}" />
+                    <TextBlock
+                        FontSize="20"
+                        FontWeight="Bold"
+                        Foreground="{DynamicResource TextColor}"
+                        Text="{Binding AssetCount}" />
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+        <Border
+            Grid.Row="2"
+            Margin="10"
+            Padding="12"
+            Background="{DynamicResource CardBackground}"
+            BorderBrush="#2E2E4F"
+            BorderThickness="1"
+            CornerRadius="8"
+            SnapsToDevicePixels="True">
+
+            <Grid>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <TextBlock
+                    Grid.Row="0"
+                    Margin="10"
+                    FontSize="20"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LatestAssets}" />
+
+                <DataGrid
+                    Grid.Row="1"
+                    Margin="10"
+                    AutoGenerateColumns="False"
+                    Background="Transparent"
+                    BorderThickness="0"
+                    CanUserSortColumns="False"
+                    ColumnWidth="*"
+                    FontSize="15"
+                    Foreground="{DynamicResource TableTextColor}"
+                    ItemsSource="{Binding Assets}">
+
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+                        </Style>
+                    </DataGrid.RowStyle>
+
+                    <DataGrid.CellStyle>
+                        <Style TargetType="DataGridCell">
+                            <Setter Property="Foreground" Value="{DynamicResource TableTextColor}" />
+                            <Setter Property="BorderThickness" Value="0" />
+                        </Style>
+                    </DataGrid.CellStyle>
+
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding Symbol}" Header="{DynamicResource Symbol}" />
+                        <DataGridTextColumn Binding="{Binding Name}" Header="{DynamicResource Name}" />
+                        <DataGridTextColumn Binding="{Binding CurrentPrice}" Header="{DynamicResource Price}" />
+                    </DataGrid.Columns>
+
+                </DataGrid>
+
+            </Grid>
+        </Border>
+
+    </Grid>
 </Page>

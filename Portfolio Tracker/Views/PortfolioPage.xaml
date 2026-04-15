@@ -30,7 +30,7 @@
 
                 <TextBlock
                     Margin="0,0,0,8"
-                    FontSize="14"
+                    FontSize="20"
                     Foreground="{DynamicResource TextColor}"
                     Text="{DynamicResource MyPortfolio}" />
                 <DataGrid
@@ -39,6 +39,7 @@
                     Background="Transparent"
                     BorderThickness="0"
                     CanUserSortColumns="False"
+                    FontSize="15"
                     Foreground="{DynamicResource TableTextColor}"
                     GridLinesVisibility="All"
                     IsReadOnly="True"

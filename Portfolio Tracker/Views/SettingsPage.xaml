@@ -24,10 +24,10 @@
             <StackPanel>
                 <TextBlock
                     Margin="0,0,0,10"
-                    FontSize="16"
+                    FontSize="20"
                     Foreground="{DynamicResource TextColor}"
                     Text="{DynamicResource Theme}" />
-                <ComboBox x:Name="ThemeBox">
+                <ComboBox x:Name="ThemeBox" FontSize="15">
                     <ComboBoxItem Content="Темна" />
                     <ComboBoxItem Content="Світла" />
                 </ComboBox>
@@ -45,11 +45,11 @@
             <StackPanel>
                 <TextBlock
                     Margin="0,0,0,10"
-                    FontSize="16"
+                    FontSize="20"
                     Foreground="{DynamicResource TextColor}"
                     Text="{DynamicResource Language}" />
 
-                <ComboBox x:Name="LanguageBox">
+                <ComboBox x:Name="LanguageBox" FontSize="15">
                     <ComboBoxItem Content="Українська" />
                     <ComboBoxItem Content="English" />
                 </ComboBox>
@@ -62,6 +62,7 @@
             Background="{DynamicResource CardBackground}"
             Click="Save_Click"
             Content="{DynamicResource Save}"
+            FontSize="15"
             Foreground="{DynamicResource TextColor}" />
 
     </StackPanel>

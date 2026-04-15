@@ -26,6 +26,7 @@
             Background="{DynamicResource CardBackground}"
             Click="AddTransaction_Click"
             Content="{DynamicResource AddTransaction}"
+            FontSize="15"
             Foreground="{DynamicResource TextColor}" />
 
         <Border
@@ -41,6 +42,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 CanUserSortColumns="False"
+                FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
                 IsReadOnly="True"
                 ItemsSource="{Binding Transactions}">

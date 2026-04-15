@@ -30,6 +30,7 @@
                 Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Add_Click"
                 Content="{DynamicResource AddTransaction}"
+                FontSize="15"
                 Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
@@ -38,6 +39,7 @@
                 Background="{DynamicResource ButtonPrimaryBackground}"
                 Click="Edit_Click"
                 Content="{DynamicResource Edit}"
+                FontSize="15"
                 Foreground="{DynamicResource ButtonPrimaryForeground}" />
 
             <Button
@@ -46,6 +48,7 @@
                 Background="{DynamicResource ButtonDangerBackground}"
                 Click="Delete_Click"
                 Content="{DynamicResource Delete}"
+                FontSize="15"
                 Foreground="{DynamicResource ButtonDangerForeground}" />
 
         </StackPanel>
@@ -64,6 +67,7 @@
                 Background="Transparent"
                 BorderThickness="0"
                 CanUserSortColumns="False"
+                FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
                 IsReadOnly="True"
                 ItemsSource="{Binding Assets}"

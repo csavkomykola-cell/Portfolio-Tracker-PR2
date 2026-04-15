@@ -10,7 +10,7 @@
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="220" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
@@ -19,7 +19,7 @@
 
                 <TextBlock
                     Margin="10"
-                    FontSize="20"
+                    FontSize="30"
                     FontWeight="Bold"
                     Foreground="{DynamicResource TextColor}"
                     Text="{DynamicResource Title}" />
@@ -29,22 +29,27 @@
                 <Button
                     Click="Dashboard_Click"
                     Content="{DynamicResource Dashboard}"
+                    FontSize="20"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Portfolio_Click"
                     Content="{DynamicResource Portfolio}"
+                    FontSize="20"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Transactions_Click"
                     Content="{DynamicResource Transactions}"
+                    FontSize="20"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Assets_Click"
                     Content="{DynamicResource Assets}"
+                    FontSize="20"
                     Style="{StaticResource SidebarButton}" />
                 <Button
                     Click="Settings_Click"
                     Content="{DynamicResource Settings}"
+                    FontSize="20"
                     Style="{StaticResource SidebarButton}" />
 
             </StackPanel>
