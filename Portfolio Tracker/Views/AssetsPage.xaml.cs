@@ -34,16 +34,27 @@ namespace Portfolio_Tracker.Views
         {
             vm.Assets.Add(new Asset
             {
-                Symbol = "—",
-                Name = "—",
-                AssetType = "—",
-                Currency = "—"
+                Symbol = "",
+                Name = "",
+                AssetType = "",
+                Currency = ""
             });
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Редагування в розробці");
+            if (vm.SelectedAsset == null)
+            {
+                MessageBox.Show("Оберіть актив");
+                return;
+            }
+
+            var window = new EditAssetWindow(vm.SelectedAsset);
+
+            if (window.ShowDialog() == true)
+            {
+                vm.OnPropertyChanged(nameof(vm.Assets));
+            }
         }
 
         private void Delete_Click(object sender, RoutedEventArgs e)

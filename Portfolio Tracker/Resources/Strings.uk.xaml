@@ -8,7 +8,7 @@
     <sys:String x:Key="Transactions">Транзакції</sys:String>
     <sys:String x:Key="Assets">Активи</sys:String>
     <sys:String x:Key="Settings">Налаштування</sys:String>
-    <sys:String x:Key="AddTransaction">Додати транзакцію</sys:String>
+    <sys:String x:Key="AddTransaction">Додати актив</sys:String>
     <sys:String x:Key="Save">Зберегти</sys:String>
     <sys:String x:Key="Theme">Тема</sys:String>
     <sys:String x:Key="Language">Мова</sys:String>

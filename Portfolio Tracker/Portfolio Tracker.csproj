@@ -71,6 +71,9 @@
     <Compile Include="Views\AssetsPage.xaml.cs">
       <DependentUpon>AssetsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\EditAssetWindow.xaml.cs">
+      <DependentUpon>EditAssetWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\PortfolioPage.xaml.cs">
       <DependentUpon>PortfolioPage.xaml</DependentUpon>
     </Compile>
@@ -89,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\AssetsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\EditAssetWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
