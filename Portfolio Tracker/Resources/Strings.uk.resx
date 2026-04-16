@@ -201,4 +201,7 @@
   <data name="Currency" xml:space="preserve">
     <value>Валюта</value>
   </data>
+  <data name="NewTransaction" xml:space="preserve">
+    <value>Нова транзакція</value>
+  </data>
 </root>

@@ -31,6 +31,15 @@ namespace Portfolio_Tracker.ViewModels
                     Price = 44000,
                     Date = "05.04.2026"
                 },
+
+                new Transaction
+                {
+                    Type = "Дивідент",
+                    Asset = "TSLA",
+                    Quantity = 4,
+                    Price = 440,
+                    Date = "09.04.2026"
+                },
             };
         }
     }

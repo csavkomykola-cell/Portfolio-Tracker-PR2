@@ -10,26 +10,23 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Portfolio_Tracker.Views
 {
     /// <summary>
-    /// Interaction logic for TransactionsPage.xaml
+    /// Interaction logic for AddTransactionWindow.xaml
     /// </summary>
-    public partial class TransactionsPage : Page
+    public partial class AddTransactionWindow : Window
     {
-        public TransactionsPage()
+        public AddTransactionWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModels.TransactionsViewModel();
         }
 
-        private void AddTransaction_Click(object sender, RoutedEventArgs e)
+        private void Save_Click(object sender, RoutedEventArgs e)
         {
-            var window = new AddTransactionWindow();
-            window.ShowDialog();
+            MessageBox.Show("Функція в розробці...");
         }
     }
 }
