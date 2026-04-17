@@ -204,4 +204,28 @@
   <data name="NewTransaction" xml:space="preserve">
     <value>New Transaction</value>
   </data>
+  <data name="LogInPage" xml:space="preserve">
+    <value>Log In Page</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Log In</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="GuestMode" xml:space="preserve">
+    <value>GuestMode</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Registration</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>FullName</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Back</value>
+  </data>
 </root>

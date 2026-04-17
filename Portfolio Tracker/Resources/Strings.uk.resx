@@ -204,4 +204,28 @@
   <data name="NewTransaction" xml:space="preserve">
     <value>Нова транзакція</value>
   </data>
+  <data name="LogInPage" xml:space="preserve">
+    <value>Вхід</value>
+  </data>
+  <data name="LogIn" xml:space="preserve">
+    <value>Логін</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Зареєструватися</value>
+  </data>
+  <data name="GuestMode" xml:space="preserve">
+    <value>Режим гостя</value>
+  </data>
+  <data name="Registration" xml:space="preserve">
+    <value>Реєстрація</value>
+  </data>
+  <data name="FullName" xml:space="preserve">
+    <value>ПІБ</value>
+  </data>
+  <data name="Back" xml:space="preserve">
+    <value>Назад</value>
+  </data>
 </root>

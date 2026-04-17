@@ -1,0 +1,56 @@
+﻿<Window
+    x:Class="Portfolio_Tracker.Views.RegisterWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="Реєстрація"
+    Width="350"
+    Height="405"
+    Background="{DynamicResource MainBackground}"
+    WindowStartupLocation="CenterScreen">
+
+    <StackPanel Margin="20">
+
+        <TextBlock
+            Margin="0,0,0,20"
+            FontSize="24"
+            FontWeight="Bold"
+            Foreground="{DynamicResource TextColor}"
+            Text="{DynamicResource Registration}" />
+
+        <TextBlock
+            FontSize="15"
+            Foreground="{DynamicResource TextColor}"
+            Text="{DynamicResource LogIn}" />
+        <TextBox Margin="0,5,0,10" FontSize="15" />
+
+        <TextBlock
+            FontSize="15"
+            Foreground="{DynamicResource TextColor}"
+            Text="{DynamicResource Password}" />
+        <PasswordBox Margin="0,5,0,10" FontSize="15" />
+
+        <TextBlock
+            FontSize="15"
+            Foreground="{DynamicResource TextColor}"
+            Text="{DynamicResource FullName}" />
+        <TextBox Margin="0,5,0,15" FontSize="15" />
+
+        <Button
+            Padding="10"
+            Background="{DynamicResource CardBackground}"
+            Click="Register_Click"
+            Content="{DynamicResource Register}"
+            FontSize="15"
+            Foreground="{DynamicResource TextColor}" />
+
+        <Button
+            Margin="0,10,0,0"
+            Padding="10"
+            Background="{DynamicResource CardBackground}"
+            Click="Back_Click"
+            Content="{DynamicResource Back}"
+            FontSize="15"
+            Foreground="{DynamicResource TextColor}" />
+
+    </StackPanel>
+</Window>

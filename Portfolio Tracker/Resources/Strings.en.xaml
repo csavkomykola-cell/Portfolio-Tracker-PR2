@@ -32,5 +32,13 @@
     <sys:String x:Key="AssetType">Asset Type</sys:String>
     <sys:String x:Key="Currency">Currency</sys:String>
     <sys:String x:Key="NewTransaction">New Transaction</sys:String>
+    <sys:String x:Key="LogInPage">Log In</sys:String>
+    <sys:String x:Key="LogIn">Email</sys:String>
+    <sys:String x:Key="Password">Password</sys:String>
+    <sys:String x:Key="Register">Register</sys:String>
+    <sys:String x:Key="GuestMode">Guest</sys:String>
+    <sys:String x:Key="Registration">Registration</sys:String>
+    <sys:String x:Key="FullName">Full Name</sys:String>
+    <sys:String x:Key="Back">Back</sys:String>
 
 </ResourceDictionary>

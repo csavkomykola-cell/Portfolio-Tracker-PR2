@@ -32,5 +32,13 @@
     <sys:String x:Key="AssetType">Тип Активу</sys:String>
     <sys:String x:Key="Currency">Валюта</sys:String>
     <sys:String x:Key="NewTransaction">Нова транзакція</sys:String>
+    <sys:String x:Key="LogInPage">Вхід</sys:String>
+    <sys:String x:Key="LogIn">Логін</sys:String>
+    <sys:String x:Key="Password">Пароль</sys:String>
+    <sys:String x:Key="Register">Зареєструватися</sys:String>
+    <sys:String x:Key="GuestMode">Режим гостя</sys:String>
+    <sys:String x:Key="Registration">Реєстрація</sys:String>
+    <sys:String x:Key="FullName">ПІБ</sys:String>
+    <sys:String x:Key="Back">Назад</sys:String>
 
 </ResourceDictionary>
