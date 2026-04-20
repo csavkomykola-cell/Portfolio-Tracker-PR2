@@ -6,6 +6,8 @@
     Width="350"
     Height="405"
     Background="{DynamicResource MainBackground}"
+    Loaded="Window_Loaded"
+    Opacity="0"
     WindowStartupLocation="CenterScreen">
 
     <StackPanel Margin="20">

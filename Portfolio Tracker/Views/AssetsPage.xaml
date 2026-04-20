@@ -2,7 +2,9 @@
     x:Class="Portfolio_Tracker.Views.AssetsPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Background="{DynamicResource MainBackground}">
+    Background="{DynamicResource MainBackground}"
+    Loaded="Page_Loaded"
+    Opacity="0">
 
     <Grid Margin="20">
 

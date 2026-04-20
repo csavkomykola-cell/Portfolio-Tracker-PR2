@@ -6,6 +6,8 @@
     Width="350"
     Height="400"
     Background="{DynamicResource MainBackground}"
+    Loaded="Page_Loaded"
+    Opacity="0"
     WindowStartupLocation="CenterScreen">
 
     <Grid Margin="20">

@@ -1,14 +1,16 @@
-﻿using System.Text;
+﻿using Portfolio_Tracker.Views;
+using System;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Portfolio_Tracker.Views;
 
 namespace Portfolio_Tracker.Views
 {
@@ -46,6 +48,18 @@ namespace Portfolio_Tracker.Views
         private void Settings_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Navigate(new SettingsPage());
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var animation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(0.2)
+            };
+
+            this.BeginAnimation(OpacityProperty, animation);
         }
     }
 }

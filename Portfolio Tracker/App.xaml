@@ -23,22 +23,51 @@
             <SolidColorBrush x:Key="ButtonDangerForeground" Color="White" />
 
             <Style x:Key="SidebarButton" TargetType="Button">
-                <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Background" Value="#00FFFFFF" />
                 <Setter Property="Foreground" Value="{DynamicResource TextColor}" />
                 <Setter Property="Margin" Value="5" />
                 <Setter Property="Padding" Value="10" />
                 <Setter Property="HorizontalContentAlignment" Value="Left" />
                 <Setter Property="BorderBrush" Value="Transparent" />
+
+                <Setter Property="RenderTransformOrigin" Value="0.5,0.5" />
+                <Setter Property="RenderTransform">
+                    <Setter.Value>
+                        <ScaleTransform ScaleX="1" ScaleY="1" />
+                    </Setter.Value>
+                </Setter>
+
                 <Setter Property="Template">
                     <Setter.Value>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                            <Border
+                                x:Name="border"
+                                Background="{TemplateBinding Background}"
+                                CornerRadius="5">
+
                                 <ContentPresenter Margin="5" />
                             </Border>
+
                             <ControlTemplate.Triggers>
+
                                 <Trigger Property="IsMouseOver" Value="True">
-                                    <Setter Property="Background" Value="{DynamicResource SidebarHoverBackground}" />
+                                    <Setter TargetName="border" Property="Background" Value="{DynamicResource SidebarHoverBackground}" />
+
+                                    <Setter Property="RenderTransform">
+                                        <Setter.Value>
+                                            <ScaleTransform ScaleX="1.05" ScaleY="1.05" />
+                                        </Setter.Value>
+                                    </Setter>
                                 </Trigger>
+
+                                <Trigger Property="IsPressed" Value="True">
+                                    <Setter Property="RenderTransform">
+                                        <Setter.Value>
+                                            <ScaleTransform ScaleX="0.95" ScaleY="0.95" />
+                                        </Setter.Value>
+                                    </Setter>
+                                </Trigger>
+
                             </ControlTemplate.Triggers>
                         </ControlTemplate>
                     </Setter.Value>

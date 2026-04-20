@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Portfolio_Tracker.ViewModels;
+using System.Windows.Media.Animation;
 
 namespace Portfolio_Tracker.Views
 {
@@ -25,6 +26,19 @@ namespace Portfolio_Tracker.Views
         {
             InitializeComponent();
             DataContext = new DashboardViewModel();
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var animation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(0.2)
+            };
+
+            this.BeginAnimation(OpacityProperty, animation);
+
         }
     }
 }

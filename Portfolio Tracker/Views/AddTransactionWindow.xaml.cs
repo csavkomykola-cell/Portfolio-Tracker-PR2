@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
@@ -27,6 +28,18 @@ namespace Portfolio_Tracker.Views
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Функція в розробці...");
+        }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            var animation = new DoubleAnimation
+            {
+                From = 0,
+                To = 1,
+                Duration = TimeSpan.FromSeconds(0.2)
+            };
+
+            this.BeginAnimation(OpacityProperty, animation);
         }
     }
 }
