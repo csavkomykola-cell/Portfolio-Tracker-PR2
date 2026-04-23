@@ -15,8 +15,3 @@ namespace Portfolio_Tracker.Resources
         }
     }
 }
-
-#if false
-// Removed runtime code — resource dictionaries don't need code-behind.
-// Delete this file from the project (or set Build Action = None) instead of compiling it.
-#endif
