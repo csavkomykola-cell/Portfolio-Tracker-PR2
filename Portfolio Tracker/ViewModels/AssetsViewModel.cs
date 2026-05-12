@@ -1,19 +1,15 @@
 ﻿using Portfolio_Tracker.Models;
-using System;
-using System.Collections.Generic;
+using Portfolio_Tracker.Services;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 namespace Portfolio_Tracker.ViewModels
 {
     public class AssetsViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
         public ObservableCollection<Asset> Assets { get; set; }
-
         private Asset _selectedAsset;
         public Asset SelectedAsset
         {
@@ -27,17 +23,56 @@ namespace Portfolio_Tracker.ViewModels
 
         public AssetsViewModel()
         {
-            Assets = new ObservableCollection<Asset>
+            // Завантаження з JSON
+            var loadedAssets =
+                JsonService.Load<ObservableCollection<Asset>>("Data/assets.json");
+
+            Assets = loadedAssets ?? new ObservableCollection<Asset>();
+
+            // Якщо файл пустий - додаємо стартові дані
+            if (Assets.Count == 0)
             {
-                new Asset { Symbol = "AAPL", Name = "Apple", AssetType = "Акція", Currency = "USD" },
-                new Asset { Symbol = "BTC", Name = "Bitcoin", AssetType = "Криптовалюта", Currency = "USD" },
-                new Asset { Symbol = "TSLA", Name = "Tesla", AssetType = "Акція", Currency = "USD" },
-            };
+                Assets.Add(new Asset
+                {
+                    Symbol = "AAPL",
+                    Name = "Apple",
+                    AssetType = "Акція",
+                    Currency = "USD"
+                });
+
+                Assets.Add(new Asset
+                {
+                    Symbol = "BTC",
+                    Name = "Bitcoin",
+                    AssetType = "Криптовалюта",
+                    Currency = "USD"
+                });
+
+                Assets.Add(new Asset
+                {
+                    Symbol = "TSLA",
+                    Name = "Tesla",
+                    AssetType = "Акція",
+                    Currency = "USD"
+                });
+
+                SaveAssets();
+            }
+        }
+        public void SaveAssets()
+        {
+            var validAssets = Assets
+                .Where(a =>
+                    !string.IsNullOrWhiteSpace(a.Symbol) &&
+                    !string.IsNullOrWhiteSpace(a.Name))
+                .ToList();
+            Services.JsonService.Save("Data/assets.json", Assets);
         }
 
         public void OnPropertyChanged(string name)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this,
+                new PropertyChangedEventArgs(name));
         }
     }
 }

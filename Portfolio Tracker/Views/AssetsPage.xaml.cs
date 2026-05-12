@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Threading;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -40,6 +41,7 @@ namespace Portfolio_Tracker.Views
                 AssetType = "",
                 Currency = ""
             });
+            vm.SaveAssets();
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)
@@ -63,6 +65,7 @@ namespace Portfolio_Tracker.Views
             if (vm.SelectedAsset != null)
             {
                 vm.Assets.Remove(vm.SelectedAsset);
+                vm.SaveAssets();
             }
             else
             {
@@ -79,6 +82,14 @@ namespace Portfolio_Tracker.Views
             };
 
             this.BeginAnimation(OpacityProperty, animation);
+        }
+
+        private void AssetsGrid_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)
+        {
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                vm.SaveAssets();
+            }), System.Windows.Threading.DispatcherPriority.Background);
         }
     }
 }

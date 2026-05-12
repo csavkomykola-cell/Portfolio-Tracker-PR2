@@ -68,11 +68,13 @@
                 AutoGenerateColumns="False"
                 Background="Transparent"
                 BorderThickness="0"
+                CanUserAddRows="False"
                 CanUserSortColumns="False"
                 FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
                 IsReadOnly="True"
                 ItemsSource="{Binding Assets}"
+                RowEditEnding="AssetsGrid_RowEditEnding"
                 SelectedItem="{Binding SelectedAsset}">
 
                 <DataGrid.RowStyle>
