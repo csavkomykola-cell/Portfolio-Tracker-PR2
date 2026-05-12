@@ -21,16 +21,23 @@ namespace Portfolio_Tracker.Views
     /// </summary>
     public partial class TransactionsPage : Page
     {
+        private ViewModels.TransactionsViewModel vm;
         public TransactionsPage()
         {
             InitializeComponent();
-            DataContext = new ViewModels.TransactionsViewModel();
+            vm = new ViewModels.TransactionsViewModel();
+            DataContext = vm;
         }
 
         private void AddTransaction_Click(object sender, RoutedEventArgs e)
         {
             var window = new AddTransactionWindow();
-            window.ShowDialog();
+
+            if (window.ShowDialog() == true)
+            {
+                vm.Transactions.Add(window.Transaction);
+                vm.Save();
+            }
         }
 
         private void Page_Loaded(object sender, RoutedEventArgs e)

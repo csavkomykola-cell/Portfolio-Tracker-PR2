@@ -29,7 +29,7 @@ namespace Portfolio_Tracker.ViewModels
 
             Assets = loadedAssets ?? new ObservableCollection<Asset>();
 
-            // Якщо файл пустий - додаємо стартові дані
+            // Якщо файл пустий - додаються стартові дані
             if (Assets.Count == 0)
             {
                 Assets.Add(new Asset
@@ -66,7 +66,7 @@ namespace Portfolio_Tracker.ViewModels
                     !string.IsNullOrWhiteSpace(a.Symbol) &&
                     !string.IsNullOrWhiteSpace(a.Name))
                 .ToList();
-            Services.JsonService.Save("Data/assets.json", Assets);
+            Services.JsonService.Save("Data/assets.json", validAssets);
         }
 
         public void OnPropertyChanged(string name)

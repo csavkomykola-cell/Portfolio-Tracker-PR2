@@ -56,6 +56,7 @@ namespace Portfolio_Tracker.Views
 
             if (window.ShowDialog() == true)
             {
+                vm.SaveAssets();
                 vm.OnPropertyChanged(nameof(vm.Assets));
             }
         }

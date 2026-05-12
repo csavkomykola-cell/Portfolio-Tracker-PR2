@@ -1,46 +1,42 @@
-﻿using System;
+﻿using Portfolio_Tracker.Services;
+using Portfolio_Tracker.Models;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Collections.ObjectModel;
-using Portfolio_Tracker.Models;
 
 namespace Portfolio_Tracker.ViewModels
 {
     public class TransactionsViewModel
     {
+        private const string Path = "Data/transactions.json";
+
         public ObservableCollection<Transaction> Transactions { get; set; }
-        public TransactionsViewModel() 
+
+        public TransactionsViewModel()
         {
-            Transactions = new ObservableCollection<Transaction>
+            var loaded = JsonService.Load<ObservableCollection<Transaction>>(Path);
+
+            Transactions = loaded ?? new ObservableCollection<Transaction>();
+
+            if (Transactions.Count == 0)
             {
-                new Transaction
+                Transactions.Add(new Transaction
                 {
                     Type = "Купівля",
                     Asset = "AAPL",
                     Quantity = 40,
                     Price = 450,
                     Date = "01.04.2026"
-                },
-                new Transaction
-                {
-                    Type = "Продаж",
-                    Asset = "BTC",
-                    Quantity = 0.4,
-                    Price = 44000,
-                    Date = "05.04.2026"
-                },
+                });
+            }
+        }
 
-                new Transaction
-                {
-                    Type = "Дивідент",
-                    Asset = "TSLA",
-                    Quantity = 4,
-                    Price = 440,
-                    Date = "09.04.2026"
-                },
-            };
+        public void Save()
+        {
+            JsonService.Save(Path, Transactions);
         }
     }
 }

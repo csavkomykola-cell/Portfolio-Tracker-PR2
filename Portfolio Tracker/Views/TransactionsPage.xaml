@@ -46,7 +46,7 @@
                 CanUserSortColumns="False"
                 FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
-                IsReadOnly="True"
+                IsReadOnly="False"
                 ItemsSource="{Binding Transactions}">
                 <DataGrid.RowStyle>
                     <Style TargetType="DataGridRow">

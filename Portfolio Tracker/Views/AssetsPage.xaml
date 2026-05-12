@@ -72,7 +72,7 @@
                 CanUserSortColumns="False"
                 FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
-                IsReadOnly="True"
+                IsReadOnly="False"
                 ItemsSource="{Binding Assets}"
                 RowEditEnding="AssetsGrid_RowEditEnding"
                 SelectedItem="{Binding SelectedAsset}">
