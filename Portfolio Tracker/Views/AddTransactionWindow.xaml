@@ -23,7 +23,7 @@
             FontSize="15"
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Type}" />
-        <ComboBox Margin="0,5,0,10">
+        <ComboBox x:Name="TypeCombo" Margin="0,5,0,10">
             <ComboBoxItem Content="Купівля" />
             <ComboBoxItem Content="Продаж" />
             <ComboBoxItem Content="Дивіденд" />
@@ -33,25 +33,25 @@
             FontSize="15"
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Asset}" />
-        <TextBox Margin="0,5,0,10" FontSize="15" />
+        <TextBox x:Name="AssetText" Margin="0,5,0,10" FontSize="15" />
 
         <TextBlock
             FontSize="15"
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Quantity}" />
-        <TextBox Margin="0,5,0,10" FontSize="15" />
+        <TextBox x:Name="QuantityText" Margin="0,5,0,10" FontSize="15" />
 
         <TextBlock
             FontSize="15"
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Price}" />
-        <TextBox Margin="0,5,0,10" FontSize="15" />
+        <TextBox x:Name="PriceText" Margin="0,5,0,10" FontSize="15" />
 
         <TextBlock
             FontSize="15"
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Date}" />
-        <DatePicker Margin="0,5,0,10" FontSize="15" />
+        <DatePicker x:Name="DatePicker" Margin="0,5,0,10" FontSize="15" />
 
         <Button
             Margin="0,15,0,0"
