@@ -2,64 +2,141 @@
     x:Class="Portfolio_Tracker.Views.LoginWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="Вхід"
-    Width="350"
-    Height="400"
+    Title="{DynamicResource LogIn}"
+    Width="420"
+    Height="420"
     Background="{DynamicResource MainBackground}"
-    Loaded="Page_Loaded"
+    Loaded="Window_Loaded"
     Opacity="0"
+    ResizeMode="NoResize"
     WindowStartupLocation="CenterScreen">
 
-    <Grid Margin="20">
-
-        <StackPanel>
+    <Border
+        Margin="14"
+        Padding="16"
+        Background="{DynamicResource CardBackground}"
+        BorderBrush="#2E2E4F"
+        BorderThickness="1"
+        CornerRadius="10">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 
             <TextBlock
-                Margin="0,0,0,20"
-                FontSize="24"
+                FontSize="20"
                 FontWeight="Bold"
                 Foreground="{DynamicResource TextColor}"
-                Text="{DynamicResource LogInPage}" />
-
-            <TextBlock
-                FontSize="15"
-                Foreground="{DynamicResource TextColor}"
                 Text="{DynamicResource LogIn}" />
-            <TextBox Margin="0,5,0,10" FontSize="15" />
+
+            <StackPanel Grid.Row="1" Margin="0,12,0,0">
+                <TextBlock
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource FullName}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource LogIn}"
+                    Visibility="Collapsed" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource Username}" />
+                <TextBox
+                    x:Name="UsernameText"
+                    Margin="0,6,0,12"
+                    FontSize="14" />
+
+                <TextBlock
+                    FontSize="14"
+                    Foreground="{DynamicResource TextColor}"
+                    Text="{DynamicResource Password}" />
+                <PasswordBox
+                    x:Name="PasswordBox"
+                    Margin="0,6,0,12"
+                    FontSize="14" />
+
+                <StackPanel
+                    Margin="0,6,0,0"
+                    HorizontalAlignment="Left"
+                    Orientation="Horizontal">
+                    <Button
+                        x:Name="LoginButton"
+                        Width="110"
+                        Margin="6"
+                        Padding="8"
+                        Background="{DynamicResource ButtonPrimaryBackground}"
+                        Click="LoginButton_Click"
+                        Content="{DynamicResource LogIn}"
+                        Foreground="{DynamicResource ButtonPrimaryForeground}" />
+                    <Button
+                        x:Name="RegisterButton"
+                        Width="110"
+                        Margin="6"
+                        Padding="8"
+                        Background="Transparent"
+                        Click="RegisterButton_Click"
+                        Content="{DynamicResource Register}"
+                        Foreground="{DynamicResource TextColor}" />
+                </StackPanel>
+
+                <Button
+                    x:Name="GuestButton"
+                    Margin="0,12,0,0"
+                    Padding="8"
+                    Background="{DynamicResource ButtonDangerBackground}"
+                    Click="GuestButton_Click"
+                    Content="{DynamicResource GuestMode}"
+                    Foreground="{DynamicResource ButtonDangerForeground}" />
+            </StackPanel>
 
             <TextBlock
-                FontSize="15"
+                Grid.Row="2"
+                Margin="0,8,0,0"
+                HorizontalAlignment="Center"
+                FontSize="12"
                 Foreground="{DynamicResource TextColor}"
-                Text="{DynamicResource Password}" />
-            <PasswordBox Margin="0,5,0,15" FontSize="15" />
-
-            <Button
-                Margin="0,0,0,10"
-                Padding="10"
-                Background="{DynamicResource CardBackground}"
-                Click="Login_Click"
-                Content="{DynamicResource LogInPage}"
-                FontSize="15"
-                Foreground="{DynamicResource TextColor}" />
-
-            <Button
-                Margin="0,0,0,10"
-                Padding="10"
-                Background="{DynamicResource CardBackground}"
-                Click="Register_Click"
-                Content="{DynamicResource Register}"
-                FontSize="15"
-                Foreground="{DynamicResource TextColor}" />
-
-            <Button
-                Padding="10"
-                Background="#4CAF50"
-                Click="Guest_Click"
-                Content="{DynamicResource GuestMode}"
-                FontSize="15"
-                Foreground="White" />
-
-        </StackPanel>
-
-    </Grid>
+                Text="{DynamicResource Title}" />
+        </Grid>
+    </Border>
 </Window>

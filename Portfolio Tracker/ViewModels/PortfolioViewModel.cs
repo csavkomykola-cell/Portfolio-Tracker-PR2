@@ -39,9 +39,21 @@ namespace Portfolio_Tracker.ViewModels
         }
 
         private FileSystemWatcher _watcher;
+        private PriceService _priceService;
+
+        public bool IsPriceLoading => _priceService?.IsLoading ?? false;
 
         public PortfolioViewModel()
         {
+            _priceService = new PriceService();
+            _priceService.PricesUpdated += OnPricesUpdated;
+            _priceService.PricesUpdateFailed += ex => {
+                // Показати лаконічне сповіщення або мовчки ігнорувати — підтримувати чуйність інтерфейсу
+                Application.Current?.Dispatcher?.BeginInvoke(new Action(() =>
+                {
+                }), DispatcherPriority.Background);
+            };
+
             Recalculate();
 
             // Відстежувати файл транзакцій, щоб зміни (збереження) автоматично оновлювали портфель
@@ -65,7 +77,7 @@ namespace Portfolio_Tracker.ViewModels
 
         private void OnTransactionsFileChanged(object sender, FileSystemEventArgs e)
         {
-            // файл може бути заблокований на короткий час; затримка та виклик на UI-потік
+            // файл може бути тимчасово заблокований; затримка та виклик у UI-потоці
             Application.Current?.Dispatcher?.BeginInvoke(new Action(() =>
             {
                 try
@@ -79,6 +91,28 @@ namespace Portfolio_Tracker.ViewModels
             }), DispatcherPriority.Background);
         }
 
+        private void OnPricesUpdated(System.Collections.Generic.Dictionary<string, decimal> prices)
+        {
+            if (prices == null || prices.Count == 0) return;
+
+            Application.Current?.Dispatcher?.BeginInvoke(new Action(() =>
+            {
+                // Оновити відповідні елементи портфеля та перерахувати підсумки
+                var updated = false;
+                foreach (var p in Portfolio)
+                {
+                    if (prices.TryGetValue(p.Symbol.ToUpperInvariant(), out var price))
+                    {
+                        p.CurrentPrice = price;
+                        updated = true;
+                    }
+                }
+
+                if (updated)
+                    UpdateSummaries();
+            }), DispatcherPriority.Background);
+        }
+
         public void Recalculate()
         {
             // Завантажити транзакції та активи
@@ -87,7 +121,7 @@ namespace Portfolio_Tracker.ViewModels
 
             // Групувати транзакції за символом активу
             var groups = transactions
-                .GroupBy(t => t.Asset?.Trim().ToUpper() ?? string.Empty)
+                .GroupBy(t => (t.Asset ?? string.Empty).Trim().ToUpperInvariant())
                 .Where(g => !string.IsNullOrEmpty(g.Key));
 
             var newPortfolio = groups.Select(g =>
@@ -101,7 +135,6 @@ namespace Portfolio_Tracker.ViewModels
                                     .Sum(t => (decimal)t.Quantity * t.Price + t.Fees);
 
                 double sellQty = g.Where(t => string.Equals(t.Type, "Sell", StringComparison.OrdinalIgnoreCase)).Sum(t => t.Quantity);
-                // Ми не коригуємо базу собівартості для продажів для розрахунку нереалізованого прибутку/збитку тут
 
                 double netQuantity = buyQty - sellQty;
 
@@ -123,7 +156,7 @@ namespace Portfolio_Tracker.ViewModels
                     Currency = currency
                 };
             })
-            // Зберігати лише позитивні позиції
+            // Зберігати лише позитивні активи
             .Where(p => p.Quantity > 0)
             .OrderBy(p => p.Symbol)
             .ToList();
@@ -133,7 +166,15 @@ namespace Portfolio_Tracker.ViewModels
             foreach (var item in newPortfolio)
                 Portfolio.Add(item);
 
-            // Оновити підсумки
+            // Запустити автоматичне оновлення цін для криптовалютних символів, які ми маємо
+            var symbols = Portfolio.Select(p => p.Symbol).ToList();
+            _priceService?.StartAutoRefresh(symbols);
+
+            UpdateSummaries();
+        }
+
+        private void UpdateSummaries()
+        {
             TotalValue = Portfolio.Sum(p => p.CurrentValue);
             TotalProfitLoss = Portfolio.Sum(p => p.ProfitLoss);
             AssetCount = Portfolio.Count;
@@ -150,6 +191,9 @@ namespace Portfolio_Tracker.ViewModels
                 _watcher.Dispose();
                 _watcher = null;
             }
+
+            _priceService?.Dispose();
+            _priceService = null;
         }
     }
 }

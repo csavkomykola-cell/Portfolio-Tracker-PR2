@@ -1,23 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Portfolio_Tracker.Services;
+using Portfolio_Tracker.Views;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Media.Animation;
 
 namespace Portfolio_Tracker.Views
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -25,34 +12,43 @@ namespace Portfolio_Tracker.Views
             InitializeComponent();
         }
 
-        private void Login_Click(object sender, RoutedEventArgs e)
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Вхід в розробці");
+            var anim = new DoubleAnimation(0, 1, new System.Windows.Duration(System.TimeSpan.FromSeconds(0.18)));
+            this.BeginAnimation(OpacityProperty, anim);
         }
 
-        private void Register_Click(object sender, RoutedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
+        {
+            var username = UsernameText.Text?.Trim();
+            var password = PasswordBox.Password;
+
+            var (ok, message, user) = AuthService.Login(username, password);
+            if (ok)
+            {
+                var main = new MainWindow();
+                main.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show((string)TryFindResource("InvalidCredentials") ?? message, (string)TryFindResource("ValidationError") ?? "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
+
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
         {
             var reg = new RegisterWindow();
+            reg.Owner = this;
             reg.ShowDialog();
         }
 
-        private void Guest_Click(object sender, RoutedEventArgs e)
+        private void GuestButton_Click(object sender, RoutedEventArgs e)
         {
+            var guest = AuthService.Guest();
             var main = new MainWindow();
             main.Show();
             this.Close();
-        }
-
-        private void Page_Loaded(object sender, RoutedEventArgs e)
-        {
-            var animation = new DoubleAnimation
-            {
-                From = 0,
-                To = 1,
-                Duration = TimeSpan.FromSeconds(0.2)
-            };
-
-            this.BeginAnimation(OpacityProperty, animation);
         }
     }
 }

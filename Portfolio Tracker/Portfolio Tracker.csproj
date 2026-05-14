@@ -52,6 +52,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt-Net-Next, Version=4.2.0.0, Culture=neutral, PublicKeyToken=1e11be04b6288443, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Next.4.2.0\lib\net472\BCrypt-Net-Next.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=10.0.0.8, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.10.0.8\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -123,7 +126,10 @@
     <None Include="Resources\Strings.uk.xaml.cs">
       <DependentUpon>Strings.uk.xaml</DependentUpon>
     </None>
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Services\AuthService.cs" />
     <Compile Include="Services\JsonService.cs" />
+    <Compile Include="Services\PriceService.cs" />
     <Compile Include="ViewModels\AssetsViewModel.cs" />
     <Compile Include="ViewModels\PortfolioViewModel.cs" />
     <Compile Include="ViewModels\DashboardViewModel.cs" />

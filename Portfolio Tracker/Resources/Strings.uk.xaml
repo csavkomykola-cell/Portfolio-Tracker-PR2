@@ -3,6 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <sys:String x:Key="LogIn">Вхід</sys:String>
+    <sys:String x:Key="Register">Реєстрація</sys:String>
+    <sys:String x:Key="GuestMode">Режим гостя</sys:String>
+    <sys:String x:Key="Username">Логін</sys:String>
+    <sys:String x:Key="Password">Пароль</sys:String>
+    <sys:String x:Key="FullName">ПІБ</sys:String>
+    <sys:String x:Key="InvalidCredentials">Невірні дані</sys:String>
+    <sys:String x:Key="ValidationError">Помилка валідації</sys:String>
+    <sys:String x:Key="PasswordsDoNotMatch">Паролі не співпадають</sys:String>
+    <sys:String x:Key="RegistrationSuccess">Реєстрація успішна</sys:String>
+    <sys:String x:Key="Success">Успіх</sys:String>
     <sys:String x:Key="Dashboard">Головна</sys:String>
     <sys:String x:Key="Portfolio">Портфель</sys:String>
     <sys:String x:Key="Transactions">Транзакції</sys:String>
@@ -33,12 +44,7 @@
     <sys:String x:Key="Currency">Валюта</sys:String>
     <sys:String x:Key="NewTransaction">Нова транзакція</sys:String>
     <sys:String x:Key="LogInPage">Вхід</sys:String>
-    <sys:String x:Key="LogIn">Логін</sys:String>
-    <sys:String x:Key="Password">Пароль</sys:String>
-    <sys:String x:Key="Register">Зареєструватися</sys:String>
-    <sys:String x:Key="GuestMode">Режим гостя</sys:String>
     <sys:String x:Key="Registration">Реєстрація</sys:String>
-    <sys:String x:Key="FullName">ПІБ</sys:String>
     <sys:String x:Key="Back">Назад</sys:String>
     <sys:String x:Key="TotalAmount">Загальна сума</sys:String>
     <sys:String x:Key="Notes">Примітки</sys:String>
@@ -47,7 +53,6 @@
     <sys:String x:Key="InvalidQuantity">Невірна кількість.</sys:String>
     <sys:String x:Key="InvalidPrice">Невірна ціна.</sys:String>
     <sys:String x:Key="InvalidFees">Невірна комісія.</sys:String>
-    <sys:String x:Key="ValidationError">Помилка валідації</sys:String>
     <sys:String x:Key="SelectTransaction">Оберіть транзакцію</sys:String>
     <sys:String x:Key="ConfirmDelete">Видалити транзакцію?</sys:String>
     <sys:String x:Key="Confirmation">Підтвердження</sys:String>
