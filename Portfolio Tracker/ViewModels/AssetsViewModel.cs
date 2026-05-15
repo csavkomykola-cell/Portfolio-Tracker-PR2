@@ -230,10 +230,9 @@ namespace Portfolio_Tracker.ViewModels
             return ok;
         }
 
-        private void OnPropertyChanged(string name)
+        public void OnPropertyChanged(string name)
         {
-            PropertyChanged?.Invoke(this,
-                new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
         }
     }
 }

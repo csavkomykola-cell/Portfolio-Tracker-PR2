@@ -3,8 +3,8 @@ using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
-using System.Windows.Media;
 using System.Windows.Media.Animation;
+using System.Windows.Media;
 
 namespace Portfolio_Tracker.Views
 {
@@ -13,7 +13,7 @@ namespace Portfolio_Tracker.Views
         public MainWindow()
         {
             InitializeComponent();
-            // початкова навігація
+            // початок навігації 
             MainFrame.Navigated += MainFrame_Navigated;
             MainFrame.Navigate(new DashboardPage());
             BtnDashboard.IsChecked = true;

@@ -56,5 +56,8 @@
     <sys:String x:Key="SelectTransaction">Оберіть транзакцію</sys:String>
     <sys:String x:Key="ConfirmDelete">Видалити транзакцію?</sys:String>
     <sys:String x:Key="Confirmation">Підтвердження</sys:String>
+    <sys:String x:Key="TotalProfitLoss">Загальний прибуток/збиток</sys:String>
+    <sys:String x:Key="AssetCount">Кількість активів</sys:String>
+    <sys:String x:Key="CurrentValue">Поточна вартість</sys:String>
 
 </ResourceDictionary>

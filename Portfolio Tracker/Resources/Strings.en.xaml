@@ -3,6 +3,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:sys="clr-namespace:System;assembly=mscorlib">
 
+    <sys:String x:Key="LogIn">Log In</sys:String>
+    <sys:String x:Key="Register">Register</sys:String>
+    <sys:String x:Key="GuestMode">Guest Mode</sys:String>
+    <sys:String x:Key="Username">Username</sys:String>
+    <sys:String x:Key="Password">Password</sys:String>
+    <sys:String x:Key="FullName">Full Name</sys:String>
+    <sys:String x:Key="InvalidCredentials">Invalid Credentials</sys:String>
+    <sys:String x:Key="ValidationError">Validation Error</sys:String>
+    <sys:String x:Key="PasswordsDoNotMatch">Passwords Do Not Match</sys:String>
+    <sys:String x:Key="RegistrationSuccess">Registration Successful</sys:String>
+    <sys:String x:Key="Success">Success</sys:String>
     <sys:String x:Key="Dashboard">Dashboard</sys:String>
     <sys:String x:Key="Portfolio">Portfolio</sys:String>
     <sys:String x:Key="Transactions">Transactions</sys:String>
@@ -33,12 +44,7 @@
     <sys:String x:Key="Currency">Currency</sys:String>
     <sys:String x:Key="NewTransaction">New Transaction</sys:String>
     <sys:String x:Key="LogInPage">Log In</sys:String>
-    <sys:String x:Key="LogIn">Email</sys:String>
-    <sys:String x:Key="Password">Password</sys:String>
-    <sys:String x:Key="Register">Register</sys:String>
-    <sys:String x:Key="GuestMode">Guest</sys:String>
     <sys:String x:Key="Registration">Registration</sys:String>
-    <sys:String x:Key="FullName">Full Name</sys:String>
     <sys:String x:Key="Back">Back</sys:String>
     <sys:String x:Key="TotalAmount">TotalAmount</sys:String>
     <sys:String x:Key="Notes">Notes</sys:String>
@@ -47,9 +53,11 @@
     <sys:String x:Key="InvalidQuantity">Invalid Quantity.</sys:String>
     <sys:String x:Key="InvalidPrice">Invalid Price.</sys:String>
     <sys:String x:Key="InvalidFees">Invalid Fees.</sys:String>
-    <sys:String x:Key="ValidationError">Validation Error</sys:String>
     <sys:String x:Key="SelectTransaction">Select a Transaction</sys:String>
     <sys:String x:Key="ConfirmDelete">Delete Transaction?</sys:String>
     <sys:String x:Key="Confirmation">Confirmation</sys:String>
+    <sys:String x:Key="TotalProfitLoss">Загальний прибуток/збиток</sys:String>
+    <sys:String x:Key="AssetCount">Кількість активів</sys:String>
+    <sys:String x:Key="CurrentValue">Поточна вартість</sys:String>
 
 </ResourceDictionary>

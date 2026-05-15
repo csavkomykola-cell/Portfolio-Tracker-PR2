@@ -21,38 +21,65 @@
             Foreground="{DynamicResource TextColor}"
             Text="{DynamicResource Assets}" />
 
+        <!--  Controls: Add/Edit/Delete + Search/Filter/Sort  -->
         <StackPanel
             Grid.Row="1"
             Margin="0,0,0,15"
+            VerticalAlignment="Center"
             Orientation="Horizontal">
+            <StackPanel Orientation="Horizontal">
+                <Button
+                    Margin="5"
+                    Padding="8"
+                    Background="{DynamicResource ButtonPrimaryBackground}"
+                    Click="Add_Click"
+                    Content="{DynamicResource AddTransaction}"
+                    FontSize="15"
+                    Foreground="{DynamicResource ButtonPrimaryForeground}" />
+                <Button
+                    Margin="5"
+                    Padding="8"
+                    Background="{DynamicResource ButtonPrimaryBackground}"
+                    Click="Edit_Click"
+                    Content="{DynamicResource Edit}"
+                    FontSize="15"
+                    Foreground="{DynamicResource ButtonPrimaryForeground}" />
+                <Button
+                    Margin="5"
+                    Padding="8"
+                    Background="{DynamicResource ButtonDangerBackground}"
+                    Click="Delete_Click"
+                    Content="{DynamicResource Delete}"
+                    FontSize="15"
+                    Foreground="{DynamicResource ButtonDangerForeground}" />
+            </StackPanel>
 
-            <Button
+            <!--  spacer  -->
+            <Grid Width="20" />
+
+            <!--  Search box (PlaceholderText removed for .NET Framework WPF)  -->
+            <TextBox
+                Width="260"
                 Margin="5"
-                Padding="8"
-                Background="{DynamicResource ButtonPrimaryBackground}"
-                Click="Add_Click"
-                Content="{DynamicResource AddTransaction}"
-                FontSize="15"
-                Foreground="{DynamicResource ButtonPrimaryForeground}" />
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="{Binding SearchQuery, UpdateSourceTrigger=PropertyChanged}" />
 
-            <Button
+            <!--  Asset type filter  -->
+            <ComboBox
+                Width="180"
                 Margin="5"
-                Padding="8"
-                Background="{DynamicResource ButtonPrimaryBackground}"
-                Click="Edit_Click"
-                Content="{DynamicResource Edit}"
-                FontSize="15"
-                Foreground="{DynamicResource ButtonPrimaryForeground}" />
+                FontSize="14"
+                ItemsSource="{Binding AssetTypes}"
+                SelectedItem="{Binding SelectedAssetType, Mode=TwoWay}" />
 
-            <Button
+            <!--  Sort options  -->
+            <ComboBox
+                Width="150"
                 Margin="5"
-                Padding="8"
-                Background="{DynamicResource ButtonDangerBackground}"
-                Click="Delete_Click"
-                Content="{DynamicResource Delete}"
-                FontSize="15"
-                Foreground="{DynamicResource ButtonDangerForeground}" />
-
+                FontSize="14"
+                ItemsSource="{Binding SortOptions}"
+                SelectedItem="{Binding SelectedSortOption, Mode=TwoWay}" />
         </StackPanel>
 
         <Border
@@ -62,7 +89,6 @@
             BorderBrush="#2E2E4F"
             BorderThickness="1"
             CornerRadius="8">
-
             <DataGrid
                 x:Name="AssetsGrid"
                 AutoGenerateColumns="False"
@@ -74,7 +100,7 @@
                 FontSize="15"
                 Foreground="{DynamicResource TableTextColor}"
                 IsReadOnly="False"
-                ItemsSource="{Binding Assets}"
+                ItemsSource="{Binding AssetsView}"
                 RowEditEnding="AssetsGrid_RowEditEnding"
                 SelectedItem="{Binding SelectedAsset, Mode=TwoWay}">
 
@@ -115,12 +141,11 @@
                     <DataGridTextColumn
                         Width="140"
                         Binding="{Binding LastUpdated, Mode=OneWay, StringFormat=dd.MM.yyyy HH:mm}"
-                        Header="{DynamicResource LastUpdated}"
+                        Header="Last Updated"
                         IsReadOnly="True" />
                 </DataGrid.Columns>
 
             </DataGrid>
-
         </Border>
 
     </Grid>
